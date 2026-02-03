@@ -1,0 +1,30 @@
+const { withAndroidStyles } = require('@expo/config-plugins');
+
+const withCustomStyles = config => {
+    return withAndroidStyles(config, async config => {
+        config.modResults = applyCustomStyles(config.modResults);
+        return config;
+    });
+};
+
+function applyCustomStyles(styles) {
+    console.log(styles)
+    if (!styles.resources || !Array.isArray(styles.resources.style)) {
+        styles.resources.style = [];
+    }
+
+    const appTheme = styles.resources.style.find(style => style.$.name === 'AppTheme');
+    if (appTheme && Array.isArray(appTheme.item)) {
+        appTheme.item.push({ _: '@style/Dialog.Theme', $: { name: 'android:datePickerDialogTheme' } });
+        appTheme.item.push({ _: '@style/Dialog.Theme', $: { name: 'android:timePickerDialogTheme' } });
+    }
+
+    styles.resources.style.push({
+        $: { name: 'Dialog.Theme', parent: 'Theme.AppCompat.Light.Dialog' },
+        item: [{ _: '#a7243a', $: { name: 'colorAccent' } }],
+    });
+
+    return styles;
+}
+
+module.exports = withCustomStyles;

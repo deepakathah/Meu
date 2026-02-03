@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238349765291",
+    "project_id": "meu-notification",
+    "storage_bucket": "meu-notification.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238349765291:android:ce16487d658d749d2245ee",
+        "android_client_info": {
+          "package_name": "com.atthah.Meu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAgYAkWsUSoVekzF5r_lwpfaKhyB4XK9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
